@@ -7,9 +7,16 @@ export async function loadData() {
 	const articles = [];
 
 	$('article').each((index, element) => {
+		const title = $(element).find('h1').text().trim()
+		let summary = $(element).find('.tab-pane.active').text().trim()
+		if (summary.includes('AI生成摘要')) {
+			summary = summary.replace('AI生成摘要', '').trim()
+		} else {
+			summary = title
+		}
 		const article = {
-			title: $(element).find('h1').text().trim(),
-			summary: $(element).find('.tab-pane.active').text().trim().replace('AI生成摘要', '').trim(),
+			title,
+			summary,
 			link: decodeURIComponent(decodeURIComponent($(element).find('a').attr('href').split('/')[4])),
 			publishedTime: $(element).find('span[data-function="fromNow"]').text().trim(),
 		};
