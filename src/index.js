@@ -49,7 +49,7 @@ export default {
 		if (lastArticles.length > 50) {
 			lastArticles.splice(0, lastArticles.length - 50)
 		}
-		await DB.put('lastArticles', lastArticles)
+		await DB.put('lastArticles', JSON.stringify(lastArticles))
 	},
 	async fetch(request, env, ctx) {
 		const result = await loadData();
