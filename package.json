@@ -1,0 +1,17 @@
+{
+  "name": "xhhclub",
+  "version": "0.0.0",
+  "type": "module",
+  "devDependencies": {
+    "wrangler": "3.19.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "wrangler dev src/index.js",
+    "deploy": "wrangler deploy src/index.js",
+    "test": "node src/test.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

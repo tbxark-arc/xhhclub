@@ -1,0 +1,12 @@
+name = "xhhclub"
+compatibility_date = "2023-12-08"
+kv_namespaces = [
+  { binding = "DB", id = "" }
+]
+
+[triggers]
+crons = ["*/10 * * * *"]
+
+[vars]
+TELEGRAM_ID = ""
+TELEGRAM_TOKEN = ""
